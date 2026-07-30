@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(SIPSorceryDesktopTargetFramework)</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SIPSorceryMedia.Abstractions\SIPSorceryMedia.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net10.0-windows'))">
+    <ProjectReference Include="..\SIPSorceryMedia.Windows\SIPSorceryMedia.Windows.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net10.0-macos'))">
+    <ProjectReference Include="..\SIPSorceryMedia.MacOS\SIPSorceryMedia.MacOS.csproj" />
+  </ItemGroup>
+
+</Project>
